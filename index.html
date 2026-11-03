@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width,initial-scale-1.0">
+        <title>ProteaPhoenix</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!--Navigation-->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">ProteaPhoenix</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#profiles-container">Profiles</a></li>
+                    <li><a href="realmsofra.html">Realms Of Ra</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--hero-->
+        <section class="hero">
+            <div class=""hero-content>
+                <h1>Protea Phoenix</h1>
+                <h2>Esoteric Wellness Center</h2>
+                <p>From the Ashes of the sun</p>
+                <a href="#profiles-container" class="hero-btn">START A CALL</a>
+            </div>
+        </section>
+
+        <!--About-->
+        <section class="about">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>We are .....</p>
+            </div>
+        </section>
+
+        <!--Profiles-->
+        <section id="profiles-container">
+            <h2>Our Phychics</h2>
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <p class="status">
+    <span class="dot"></span>
+    <span class="status-text">Offline</span>
+</p>
+                    <img src="Asset/portfolio/IMG_2479.JPG" alt="">
+                    <h3>name</h3>
+                    <p>details</p>
+                    <button onclick="gotoPricing(1)">View Pricing</button>
+                </div>
+            </div>
+        </section>
+
+    <script>
+    const statusElements = document.querySelectorAll(".status");
+
+    statusElements.forEach(status => {
+        const text = status.querySelector(".status-text");
+
+        // random for demo (or force one online)
+        const isOnline = Math.random() > 0.5;
+
+        if (isOnline) {
+            status.classList.add("online");
+            status.classList.remove("offline");
+            text.innerText = "Online";
+        } else {
+            status.classList.add("offline");
+            status.classList.remove("online");
+            text.innerText = "Offline";
+        }
+    });
+</script>
+        <script src="script.js"></script>
+    </body>
+</html>

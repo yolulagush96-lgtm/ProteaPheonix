@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width,initial-scale-1.0">
+        <title>ProteaPhoenix-Checkout</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+         <!--Navigation-->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">ProteaPhoenix</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#profile-container">Profiles</a></li>
+                    <li><a href="realmsofra.html">Realms Of Ra</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Checkout</h1>
+
+        <div class="checkout-box">
+             <p id="summary"></p>
+             <button id="pay-btn">Pay Now</button>
+        </div>
+
+        <script>
+             const profile = localStorage.getItem("selectedProfile");
+             const minutes = localStorage.getItem("selectedMinutes");
+             const price = localStorage.getItem("selectedPrice");
+
+             document.getElementById("summary").innerText =
+             `Session: ${minutes} minutes | Price: R${price}`;
+
+            document.getElementById("pay-btn").addEventListener("click", () => {
+             // fake payment for demo
+             window.location.href = "success.html";
+
+             document.getElementById("summary").innerText =
+             `Session booked:\n\n${minutes} minutes\nPrice: R${price}`;
+
+             button.disabled = true;
+             button.innerText = "Processing...";
+            });
+        </script>
+</html>
