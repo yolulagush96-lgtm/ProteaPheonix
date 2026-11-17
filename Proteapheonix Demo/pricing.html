@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - ProteaPhoenix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+ <!--Navigation-->
+        <nav class="navbar">
+            <div class="nav-container">
+                                <div class="nav-logo">
+                    <a href="index.html">ProteaPhoenix</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#profile-container">Profiles</a></li>
+                    <li><a href="realmsofra.html">Realms Of Ra</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+<!-- Pricing Section -->
+<section class="pricing">
+    <h1>Select Your Call Duration</h1>
+    <p>Choose a session that fits your needs</p>
+    
+
+    <div class="pricing-grid">
+
+        <div class="pricing-card">
+            <h2>10 Minutes</h2>
+            <p class="price" data-day="222" data-night="277">R222</p>
+            <button class="select-btn" data-min="10">Select</button>
+        </div>
+
+        <div class="pricing-card">
+            <h2>15 Minutes</h2>
+            <p class="price" data-day="333" data-night="444">R333</p>
+            <button class="select-btn" data-min="15">Select</button>
+        </div>
+
+        <div class="pricing-card">
+            <h2>30 Minutes</h2>
+            <p class="price" data-day="566" data-night="777">R566</p>
+            <button class="select-btn" data-min="30">Select</button>
+        </div>
+
+        <div class="pricing-card">
+            <h2>45 Minutes</h2>
+            <p class="price" data-day="788" data-night="1111">R788</p>
+            <button class="select-btn" data-min="45">Select</button>
+        </div>
+
+        <div class="pricing-card">
+            <h2>60 Minutes</h2>
+            <p class="price" data-day="1022" data-night="1444">R1022</p>
+            <button class="select-btn" data-min="60">Select</button>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function isNightTime() {
+        const hour = new Date().getHours();
+        return (hour >= 22 || hour < 6);
+    }
+
+    const priceElements = document.querySelectorAll(".price");
+
+    priceElements.forEach(el => {
+        const dayPrice = el.dataset.day;
+        const nightPrice = el.dataset.night;
+
+        if (isNightTime()) {
+            el.innerText = "R" + nightPrice;
+            el.dataset.activePrice = nightPrice;
+        } else {
+            el.innerText = "R" + dayPrice;
+            el.dataset.activePrice = dayPrice;
+        }
+    });
+
+    const buttons = document.querySelectorAll(".select-btn");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            const card = button.closest(".pricing-card");
+            const priceEl = card.querySelector(".price");
+
+            const minutes = button.dataset.min;
+            const price = priceEl.dataset.activePrice;
+
+            localStorage.setItem("selectedMinutes", minutes);
+            localStorage.setItem("selectedPrice", price);
+
+            window.location.href = "checkout.html";
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

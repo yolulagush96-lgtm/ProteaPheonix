@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ProteaPhoenix</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <!-- Fixed background -->
+        <div class="background"></div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.ejs">Protea Phoenix</a>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="#psychics">Psychics</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Horizontal slideshow -->
+        <main class="slider">
+            <!-- Slide 1: Home -->
+            <section class="slide" id="home">
+                <h1>Protea Phoenix</h1>
+                <p>From the ashes of the sun.</p>
+            </section>
+
+            <!-- Slide 2: Psychics -->
+            <section class="slide" id="psychics">
+                <h2>Meet Our Psychics</h2>
+
+                <!--Profiles-->
+                <section id="profiles-container">
+                    <div class="profile-grid">
+                        <div class="profile-card">
+                            <p class="status">
+                                <span class="dot"></span>
+                                <span class="status-text">Offline</span>
+                            </p>
+                            <img src="/Assets/IMG_2479.JPG" alt="" />
+                            <h3>name</h3>
+                            <p>details</p>
+                            <button onclick="gotoPricing(1)">View Profile</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 3: About -->
+            <section class="slide" id="about">
+                <h2>About Us</h2>
+            </section>
+
+            <!-- Slide 4: Contact -->
+            <section class="slide" id="contact">
+                <h2>Contact Us</h2>
+            </section>
+        </main>
+    </body>
+</html>
